@@ -62,10 +62,10 @@ class TrackitProvider implements vscode.TreeDataProvider<TodoTreeItem> {
 
 async function scanWorkspace(): Promise<TodoItem[]> {
   const results: TodoItem[] = [];
-  const TAG_REGEX = /\/\/\s*(TODO|FIXME|HACK):?\s*(.+)/gi;
+  const TAG_REGEX = /(?:\/\/|#|<!--|\/\*)\s*(TODO|FIXME|HACK):?\s*(.+?)(?:\s*-->|\s*\*\/)?$/gi;
 
   const files = await vscode.workspace.findFiles(
-    "**/*.{ts,js,tsx,jsx,py,java,cpp,c,cs,go,rb,rs}",
+    "**/*.{ts,js,tsx,jsx,py,java,cpp,c,cs,go,rb,rs,html,css,vue,svelte}",
     "**/node_modules/**"
   );
 
