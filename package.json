@@ -3,6 +3,7 @@
   "displayName": "Trackit",
   "description": "Track TODO, FIXME & HACK comments across your workspace",
   "version": "0.0.1",
+  "icon": "logo.png",
   "engines": { "vscode": "^1.80.0" },
   "categories": ["Other"],
   "activationEvents": ["onStartupFinished"],
